@@ -1,0 +1,15 @@
+<h1>Word Study List</h1>
+<h3>Click on a word to see its definitions, and add more words to study</h3>
+
+<ul>
+	<% @words.each() do |word| %>
+		<li><%= word.name() %></li>
+	<% end %>
+</ul>
+
+<form action="/new_word" method="post">
+	<label for="new_word">Add a word:</label>
+	<input type="text" name="new_word" id="new_word">
+
+	<button type="submit" class="btn btn-primary">Add Word</button>
+</form>
