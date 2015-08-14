@@ -15,3 +15,8 @@ post('/new_word') do
 	@new_word.add()
 	redirect('/')
 end
+
+post('/clear_words') do
+	Word.clear()
+	redirect('/')
+end
