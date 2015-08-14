@@ -6,7 +6,7 @@
 	<% end %>
 </ul>
 
-<h3>Add a definition</h3>
+<h3>Add a definition:</h3>
 <form action="/add_definition" method="post">
 	<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
 
@@ -21,5 +21,5 @@
 
 <form action="/clear_definitions" method="post">
 	<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
-	<button type="submit" class="btn btn-warning">Clear Definitions</button>
+	<button type="submit" class="btn btn-danger">Clear Definitions</button>
 </form>

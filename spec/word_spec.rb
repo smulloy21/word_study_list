@@ -1,6 +1,7 @@
 require('rspec')
 require('word')
 require('definition')
+require('example_sentence')
 
 describe(Word) do
 	before() do
@@ -78,4 +79,31 @@ describe(Definition) do
 			expect(test_definition.type()).to(eq("Verb"))
 		end
 	end
+	describe('#add_example') do
+		it('adds an example sentence to a definition') do
+			test_definition = Definition.new("Adj", "Outrageously bad")
+			test_example = ExampleSentence.new("We'll keep a low profile and limit any negative publicity to really egregious errors.")
+			test_definition.add_example(test_example)
+			expect(test_definition.examples()).to(eq([test_example]))
+		end
+	end
+	describe('#clear_examples') do
+		it('clears all example sentences of a definition') do
+			test_definition = Definition.new("Adj", "Outrageously bad")
+			test_example = ExampleSentence.new("We'll keep a low profile and limit any negative publicity to really egregious errors.")
+			test_definition.add_example(test_example)
+			test_definition.clear_examples()
+			expect(test_definition.examples()).to(eq([]))
+		end
+	end
 end
+
+describe(ExampleSentence) do
+	describe('#sentence') do
+		it('returns the example sentence') do
+			test_example = ExampleSentence.new("We'll keep a low profile and limit any negative publicity to really egregious errors.")
+			expect(test_example.sentence()).to(eq("We'll keep a low profile and limit any negative publicity to really egregious errors."))
+		end
+	end
+end
+

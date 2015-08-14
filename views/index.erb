@@ -1,5 +1,5 @@
 <h1>Word Study List</h1>
-<h3>Click on a word to see its definitions, and add more words to study</h3>
+<h3>Click on a word to see its definitions</h3>
 
 <ul>
 	<% @words.each() do |word| %>
@@ -9,11 +9,11 @@
 
 <form action="/new_word" method="post">
 	<label for="new_word">Add a word:</label>
-	<input type="text" name="new_word" id="new_word">
+	<input type="text" name="new_word" id="new_word" autofocus>
 
 	<button type="submit" class="btn btn-primary">Add Word</button>
 </form>
 
 <form action="/clear_words" method="post">
-	<button type="submit" class="btn btn-warning">Clear All</button>
+	<button type="submit" class="btn btn-danger">Clear All</button>
 </form>
