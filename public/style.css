@@ -45,9 +45,12 @@ ul {
 input {
 	margin: 0 1rem;
 }
+input.nospace {
+	margin: 0;
+}
 .btn-primary {
 	margin-top: 0;
 }
-form.add_def {
-	margin-left: 4rem;
+.clear_all {
+	margin: 3rem 0;
 }
