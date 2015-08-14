@@ -45,3 +45,17 @@ describe('the clear definitions path', {:type => :feature}) do
 		expect(page).to have_no_content('outstandingly bad')
 	end
 end
+describe('the add example sentence path', {:type => :feature}) do
+	it("clears all definitions on a word's page") do
+		visit('/')
+		fill_in('new_word', :with => 'aesthetic')
+		click_button('Add Word')
+		click_link('aesthetic')
+		fill_in('type', :with => 'adj')
+		fill_in('new_definition', :with => 'of or relating to beauty')
+		click_button('Add Definition')
+		fill_in('sentence', :with => 'The vase is priceless for its aesthetic rather than practical value.')
+		click_button('Add sentence')
+		expect(page).to have_content('The vase is priceless for its aesthetic rather than practical value.')
+	end
+end
