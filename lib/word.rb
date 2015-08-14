@@ -2,6 +2,7 @@ class Word
 	@@word_list = []
 	define_method(:initialize) do |word|
 		@word = word
+		@id = @@word_list.length + 1
 	end
 	define_method(:name) do 
 		@word
@@ -11,5 +12,20 @@ class Word
 	end
 	define_method(:add) do
 		@@word_list.push(self)
+	end
+	define_singleton_method(:clear) do
+		@@word_list = []
+	end
+	define_method(:id) do
+		@id
+	end
+	define_singleton_method(:find) do |id|
+		found_word = nil
+		@@word_list.each() do |word|
+			if word.id() == id
+				found_word = word
+			end
+		end
+		found_word
 	end
 end
