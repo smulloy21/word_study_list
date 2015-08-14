@@ -50,7 +50,7 @@ post('/add_example') do
 	@word = Word.find(word_id.to_i())
 	@definition = @word.find_definition(definition)
 	@definition.add_example(example)
-	erb(:word)
+	redirect('/word/' + @word.id().to_s())
 end
 
 

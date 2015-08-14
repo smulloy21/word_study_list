@@ -8,6 +8,8 @@
 
 Home page has a user-created list of words - each word can be clicked on to go to its page, to see and add multiple definitions, and example sentences for each definition.
 
+link on heroku: https://word-study-list.herokuapp.com
+
 ## Setup
 
 * _Clone from GitHub_
