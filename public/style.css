@@ -1,0 +1,53 @@
+html {
+	height: 100%;
+}
+body {
+	background: rgba(3, 3, 3, .5) url('img/studying.jpg') no-repeat center top;
+	background-size: cover;
+	font-family: helvetica;
+	font-weight: 200;
+	height: 100%;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+h1, h2, h3, li, label, button {
+	font-weight: 200;
+	font-family: helvetica;
+	margin: 1rem 0;
+}
+h1, h3 {
+	margin: 2rem 0;
+}
+li.def {
+	font-size: 2rem;
+}
+li.ex {
+	font-size: 1.75rem;
+	margin: .5rem;
+}
+li.words {
+	font-size: 2.25rem;
+}
+
+label {
+	font-size: 2rem;
+}
+.btn-info, .btn-danger {
+	margin: 4rem 10rem;
+	display: inline;
+	float: left;
+}
+ul {
+	margin-left: 4rem;
+}
+input {
+	margin: 0 1rem;
+}
+.btn-primary {
+	margin-top: 0;
+}
+form.add_def {
+	margin-left: 4rem;
+}

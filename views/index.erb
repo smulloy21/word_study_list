@@ -3,12 +3,12 @@
 
 <ul>
 	<% @words.each() do |word| %>
-		<li><a href="/word/<%= word.id() %>"><%= word.name() %></a></li>
+		<li class="words"><a href="/word/<%= word.id() %>"><%= word.name() %></a></li>
 	<% end %>
 </ul>
 
-<form action="/new_word" method="post">
-	<label for="new_word">Add a word:</label>
+<h3>Add a word:</h3>
+<form class="add_word" action="/new_word" method="post">
 	<input type="text" name="new_word" id="new_word" autofocus>
 
 	<button type="submit" class="btn btn-primary">Add Word</button>

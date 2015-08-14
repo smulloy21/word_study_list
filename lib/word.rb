@@ -38,4 +38,13 @@ class Word
 	define_method(:clear_definitions) do
 		@definition = []
 	end
+	define_method(:find_definition) do |definition|
+		found_definition = nil
+		@definition.each() do |spot|
+			if spot.define() == definition
+				found_definition = spot
+			end
+		end
+		found_definition
+	end
 end

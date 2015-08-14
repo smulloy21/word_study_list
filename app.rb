@@ -43,4 +43,15 @@ post('/clear_definitions') do
 	redirect('/word/' + @word.id().to_s())
 end
 
+post('/add_example') do
+	example = params.fetch('sentence')
+	word_id = params.fetch('word_id')
+	definition = params.fetch('definition')
+	@word = Word.find(word_id.to_i())
+	@definition = @word.find_definition(definition)
+	@definition.add_example(example)
+	erb(:word)
+end
+
+
 

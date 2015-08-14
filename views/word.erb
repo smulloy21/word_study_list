@@ -2,12 +2,26 @@
 
 <ul>
 	<% @word.define().each() do |definition| %>
-		<li><%= definition.one_line() %></li>
+		<li class="def"><%= definition.one_line() %></li>
+		<ul>
+			<% definition.examples().each() do |example| %>
+				<li class="ex"><%= example %></li>
+			<% end %>
+		</ul>
+		<form action="/add_example" method="post">
+			<input id='definition' name='definition' type='hidden' value='<%= definition.define() %>'>
+			<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
+
+			<label for="sentence">Add an example sentence:</label>
+			<input type="text" name="sentence" id="sentence">
+
+			<button type="submit" class="btn btn-primary">Add sentence</button>
+		</form>
 	<% end %>
 </ul>
 
 <h3>Add a definition:</h3>
-<form action="/add_definition" method="post">
+<form class="add_def" action="/add_definition" method="post">
 	<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
 
 	<label for="type">Part of speech:</label>
@@ -23,3 +37,5 @@
 	<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
 	<button type="submit" class="btn btn-danger">Clear Definitions</button>
 </form>
+
+<a href="/" class="btn btn-info" role="button">Back to Word List</a>
