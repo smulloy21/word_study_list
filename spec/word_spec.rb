@@ -6,7 +6,7 @@ describe(Word) do
 	before() do
 		Word.clear()
 	end
-	
+
 	describe('#name') do
 		it('returns the word') do
 			test_word = Word.new("abdicate")
@@ -44,7 +44,7 @@ describe(Word) do
 			expect(Word.find(test_word2.id())).to(eq(test_word2))
 		end
 	end
-	describe('#add_definition') do 
+	describe('#add_definition') do
 		it('adds a definition to an instance of word') do
 			test_word = Word.new("abdicate")
 			test_word.add()
@@ -79,4 +79,3 @@ describe(Definition) do
 		end
 	end
 end
-

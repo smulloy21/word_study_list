@@ -5,7 +5,7 @@ class Word
 		@id = @@word_list.length + 1
 		@definition = []
 	end
-	define_method(:name) do 
+	define_method(:name) do
 		@word
 	end
 	define_singleton_method(:all) do

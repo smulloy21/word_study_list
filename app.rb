@@ -5,7 +5,7 @@ require('./lib/definition')
 require('pry')
 also_reload('lib/**/*.rb')
 
-get('/') do 
+get('/') do
 	@words = Word.all()
 	erb(:index)
 end
@@ -19,4 +19,19 @@ end
 post('/clear_words') do
 	Word.clear()
 	redirect('/')
+end
+
+get('/word/:id') do
+	@word = Word.find(params.fetch('id').to_i())
+	erb(:word)
+end
+
+post('/add_definition') do
+	type = params.fetch('type')
+	definition = params.fetch('new_definition')
+	id = params.fetch('word_id')
+	new_definition = Definition.new(type, definition)
+	@word = Word.find(id.to_i())
+	@word.add_definition(new_definition)
+	redirect('/word/' + @word.id().to_s())
 end

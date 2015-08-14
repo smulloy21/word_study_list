@@ -9,4 +9,8 @@ class Definition
 	define_method(:type) do
 		@type
 	end
+	define_method(:one_line) do
+		one_line = ""
+		one_line += "(" + @type + ") : " + @definition
+	end
 end
