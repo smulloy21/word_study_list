@@ -35,3 +35,12 @@ post('/add_definition') do
 	@word.add_definition(new_definition)
 	redirect('/word/' + @word.id().to_s())
 end
+
+post('/clear_definitions') do
+	id = params.fetch('word_id')
+	@word = Word.find(id.to_i())
+	@word.clear_definitions()
+	redirect('/word/' + @word.id().to_s())
+end
+
+

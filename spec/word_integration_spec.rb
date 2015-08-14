@@ -32,3 +32,16 @@ describe('the add definitions path', {:type => :feature}) do
 		expect(page).to have_content('fleeting')
 	end
 end
+describe('the clear definitions path', {:type => :feature}) do
+	it("clears all definitions on a word's page") do
+		visit('/')
+		fill_in('new_word', :with => 'egregious')
+		click_button('Add Word')
+		click_link('egregious')
+		fill_in('type', :with => 'adjective')
+		fill_in('new_definition', :with => 'outstandingly bad')
+		click_button('Add Definition')
+		click_button('Clear Definitions')
+		expect(page).to have_no_content('outstandingly bad')
+	end
+end

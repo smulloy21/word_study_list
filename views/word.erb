@@ -1,4 +1,4 @@
-<%= @word.name() %>
+<h1><%= @word.name() %></h1>
 
 <ul>
 	<% @word.define().each() do |definition| %>
@@ -17,4 +17,9 @@
 	<input type="text" name="new_definition" id="new_definition">
 
 	<button type="submit" class="btn btn-primary">Add Definition</button>
+</form>
+
+<form action="/clear_definitions" method="post">
+	<input id='word_id' name='word_id' type='hidden' value='<%= @word.id() %>'>
+	<button type="submit" class="btn btn-warning">Clear Definitions</button>
 </form>
